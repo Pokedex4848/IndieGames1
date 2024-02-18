@@ -17,6 +17,6 @@ public class playerMovementController : MonoBehaviour
     {
         camera.transform.Rotate(-Input.GetAxis("Mouse Y"), 0, 0);
         transform.Rotate(0, Input.GetAxis("Mouse X"), 0);
-        GetComponent<Rigidbody>().velocity = Input.GetAxis("Vertical") * transform.forward + Input.GetAxis("Horizontal") * transform.right;
+        GetComponent<Rigidbody>().velocity = (Input.GetAxis("Vertical") * transform.forward + Input.GetAxis("Horizontal") * transform.right) * 10;
     }
 }
