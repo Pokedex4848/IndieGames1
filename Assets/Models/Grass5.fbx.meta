@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: e1f9c4fc31de07e4694b47ec9697c421
+guid: 4a75f5b50791d9c4aaa56cb130ac6927
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mat_Light
-    second: {fileID: 2100000, guid: 4b9fc9a77aa9ab046b68667898ac1223, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -76,7 +71,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-    normalCalculationMode: 2
+    normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
