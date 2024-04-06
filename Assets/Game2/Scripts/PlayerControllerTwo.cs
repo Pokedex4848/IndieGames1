@@ -6,10 +6,10 @@ using UnityEngine.UIElements;
 
 public class PlayerControllerTwo : MonoBehaviour
 {
-    private float maxSpeed = 5;
+    private float maxSpeed = 4;
     private float speed = 25;
     private float jumpForce;
-    private float maxJumpForce = 500;
+    private float maxJumpForce = 400;
     private int maxJumps = 1;
     private int jumps;
     private float xScale;
@@ -56,7 +56,7 @@ public class PlayerControllerTwo : MonoBehaviour
         {
             if(dash && Input.GetKeyDown(KeyCode.LeftShift) && (xRaw != 0 || yRaw != 0))
             {
-                rb.velocity = new Vector2(xRaw, yRaw) * 10;
+                rb.velocity = new Vector2(xRaw, yRaw) * 7.5f;
                 dash = false;
             }
         }
@@ -85,7 +85,7 @@ public class PlayerControllerTwo : MonoBehaviour
         //Used to fix player stopping for a couple frames when they hit the ground
         if (isGrounded() && !onPlatform())
         {
-            rb.AddForce(Vector2.right * xScale * 200);
+            rb.AddForce(Vector2.right * xScale * 50);
         }
     }
 
