@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -18,6 +19,7 @@ public class PlayerControllerTwo : MonoBehaviour
 
     private Rigidbody2D rb;
     private BoxCollider2D bc;
+    private Animator anim;
 
     [SerializeField]
     private LayerMask player;
@@ -30,6 +32,7 @@ public class PlayerControllerTwo : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         bc = GetComponent<BoxCollider2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -45,6 +48,9 @@ public class PlayerControllerTwo : MonoBehaviour
 
             rb.AddForce(Vector2.up * jumpForce);
             jumps--;
+
+            anim.StopPlayback();
+            anim.Play("CharacterJump", 0, 0);
         }
 
         if(isGrounded())
@@ -86,6 +92,8 @@ public class PlayerControllerTwo : MonoBehaviour
         if (isGrounded() && !onPlatform())
         {
             rb.AddForce(Vector2.right * xScale * 50);
+
+            anim.Play("CharacterIdle");
         }
     }
 
